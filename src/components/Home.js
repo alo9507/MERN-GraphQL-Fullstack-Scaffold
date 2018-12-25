@@ -9,6 +9,7 @@ import { increment } from '../redux/actions';
 class Home extends Component {
 
     render() {
+        console.log(this.props);
         return (
           <div className="ui grid">
           
@@ -23,6 +24,11 @@ class Home extends Component {
             </div>
 
             <div>
+                <p>Google OAuth2</p>
+                <div>{this.props.isSignedIn ? this.props.userId : `Not signed in`}</div>
+            </div>
+
+            <div>
                 <button onClick={this.props.increment}>Increment</button>
             </div>
             
@@ -32,7 +38,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { count: state.count.count }
+    return { count: state.count.count, isSignedIn: state.auth.isSignedIn, userId: state.auth.userId }
 };
 
 const reduxified = connect(mapStateToProps, { increment })(Home);
