@@ -7,7 +7,21 @@ import { connect } from 'react-redux';
 import { increment } from '../redux/actions';
 
 class Home extends Component {
+  renderAuthors = () => {
+    return this.props.data.authors.map(author => {
+      return (
+        <li className='item' key={author.id}>
+          <div className='content'>{author.name}</div>
+        </li>
+      );
+    });
+  };
+
   render() {
+    if (this.props.data.loading) {
+      return <div>Fetching songs...</div>;
+    }
+
     return (
       <div className='ui grid'>
         <div>
@@ -17,7 +31,7 @@ class Home extends Component {
 
         <div>
           <p>ApolloClient</p>
-          <div>{this.props.data.version}</div>
+          <div>{this.renderAuthors()}</div>
         </div>
 
         <div>
@@ -50,7 +64,9 @@ const reduxified = connect(
 
 const query = gql`
   {
-    version
+    authors {
+      name
+    }
   }
 `;
 

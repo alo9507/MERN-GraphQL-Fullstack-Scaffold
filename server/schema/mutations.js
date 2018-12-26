@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
+const { GraphQLObjectType, GraphQLString, GraphQLInt } = graphql;
 
 const Author = require('../models/author');
 const AuthorType = require('./types/authorType');
@@ -17,7 +17,7 @@ const mutation = new GraphQLObjectType({
         name: { type: GraphQLString }
       },
       resolve(parentValue, { name }) {
-        return (new Author({ name })).save();
+        return new Author({ name }).save();
       }
     }
   }
