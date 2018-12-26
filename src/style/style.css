@@ -1,93 +1,173 @@
-.card {
-  background-color: antiquewhite;
+/*add things specific to a one-off part of the website here, e.g. a shopping cart
+with unique layout */
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-family: "Poiret One", cursive;
+  font-size: 2em;
 }
 
-.input-field label {
-  left: 0;
+.btn-green {
+  background: #2ecc71;
+}
+.btn-green:hover {
+  background: #26ab5f;
+  transition: all 0.3s ease;
+}
+.btn-green:active {
+  background: #176437;
 }
 
-.range-slider {
-  margin: 65px 0 30px;
+.btn-blue {
+  background: #3498db;
+}
+.btn-blue:hover {
+  background: #2383c4;
+  transition: all 0.3s ease;
+}
+.btn-blue:active {
+  background: #16527a;
 }
 
-.range-slider label {
-  top: -37px;
+.btn-yellow {
+  background: #f1c40f;
+}
+.btn-yellow:hover {
+  background: #cba50c;
+  transition: all 0.3s ease;
+}
+.btn-yellow:active {
+  background: #796307;
+}
+
+.btn-red {
+  background: #e74c3c;
+}
+.btn-red:hover {
+  background: #df2e1b;
+  transition: all 0.3s ease;
+}
+.btn-red:active {
+  background: #921e12;
+}
+
+.input-regular {
+  border: solid 1px green !important;
+  box-shadow: none !important;
+}
+.input-regular:read-only {
+  background-color: white;
+}
+.input-regular:focus {
+  border: solid 1px green !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.input-regular::placeholder {
+  color: green;
+  opacity: 1;
+}
+
+.input:focus, .input:active {
+  outline: none;
+}
+.input:focus + label {
+  top: -8px;
+  font-size: 12px;
+}
+
+.pagination input {
+  width: 50px;
+}
+.pagination button {
+  padding: 0.5em;
+}
+.pagination .page-number {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.acro-scrollBar {
+  position: relative;
+  overflow: auto;
+}
+.acro-scrollBar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+}
+.acro-scrollBar::-webkit-scrollbar-track {
+  background-color: white;
+}
+.acro-scrollBar::-webkit-scrollbar-thumb {
+  background-color: green;
+}
+
+.form-group label {
+  color: green !important;
+  font-size: 18px;
+}
+.form-group .has-error input[type] {
+  border: 2px solid red !important;
+}
+.form-group .has-error input[type]:focus, .form-group .has-error input[type]:active {
+  border: none;
+}
+.form-group .has-error select {
+  border: 2px solid red !important;
+  color: black;
+}
+.form-group .has-error .help-block {
+  color: red;
+  display: inline-block;
+  font-size: 14px;
+}
+.form-group .pasword-criteria {
+  color: grey !important;
+}
+.form-group .pasword-criteria .password-criteria-satisfied {
+  color: green;
+  font-weight: bold;
+}
+
+.acro-typography {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: grey;
+  margin: 1.1em 0;
+}
+
+h1,
+h2 {
+  line-height: 1.1;
 }
 
 label {
-  color: white !important;
+  font-weight: 700;
+  font-size: 18px;
+  color: green;
 }
 
-.pagination li > a {
-  cursor: pointer;
+pre,
+code {
+  font-family: "Andale Mono", AndaleMono, monospace;
+  font-size: 15px;
+  line-height: 1.2;
 }
 
-.pagination {
-  margin-bottom: 5px;
-}
-
-a.secondary-content {
-  position: relative !important;
-  flex: 1;
-  text-align: right;
-  top: 0px !important;
-  right: 0px !important;
-}
-
-.secondary-content .material-icons {
-  font-size: 36px;
-}
-
-.artist-detail .header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-around;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.album img {
-  width: 250px !important;
-}
-
-.has-error {
-  color: red;
-}
-
-.spacer a {
-  margin: 0px 10px;
-  cursor: pointer;
-}
-
-li.collection-item.avatar {
-  display: flex;
-  align-items: center;
-  padding-left: 10px !important;
-}
-
-li.collection-item.avatar img {
-  position: relative !important;
-  left: 0px !important;
-  margin: 0px 10px !important;
-}
-
-.retired {
-  background-color: #ddd !important;
-}
-
-.select {
-  font-size: 1rem;
-}
-
-select {
-  display: block !important;
-  margin-bottom: 10px;
-  height: 30px;
-  color: black;
-}
+/*# sourceMappingURL=style.css.map */

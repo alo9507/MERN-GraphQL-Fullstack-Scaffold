@@ -9,7 +9,7 @@ $base-top-bottom-spacing: .5em;
 }
 
 %link {
-    color: $dark-green;
+    color: green;
     text-decoration: underline;
     font-weight: 700;
 
@@ -18,12 +18,12 @@ $base-top-bottom-spacing: .5em;
     }
 
     &:visited {
-        color: darken($dark-green, 7%);
+        color: darken(green, 7%);
     }
 
     &:hover,
     &:visited:hover {
-        color: darken($dark-green, 5%);
+        color: darken(green, 5%);
         cursor: pointer;
     }
 
@@ -35,37 +35,36 @@ $base-top-bottom-spacing: .5em;
 
 .form-group {
     label {
-        color: $green-nex-base-medium !important;
+        color: green !important;
         font-size: 18px;
     }
 
     & .has-error {
         input[type] {
-            border: 2px solid $error !important;
+            border: 2px solid red !important;
 
             &:focus,
             &:active {
                 border: none;
-                @include box-shadow(none);
             }
         }
 
         select {
-            border: 2px solid $error !important;
+            border: 2px solid red !important;
             color: black;
         }
 
         & .help-block {
-            color: $error;
+            color: red;
             display: inline-block;
             font-size: 14px;
         }
     }
     & .pasword-criteria {
-        color: $grey-lighten-40 !important;
+        color: grey !important;
 
         & .password-criteria-satisfied {
-            color: $green;
+            color: green;
             font-weight: bold;
         }
     }
@@ -88,7 +87,7 @@ h4,
 h5,
 h6,
 p {
-    color: $grey;
+    color: grey;
     margin: 1.1em 0;
 }
 
@@ -100,7 +99,7 @@ h2 {
 label {
     font-weight: 700;
     font-size: 18px;
-    color: $dark-green;
+    color: green;
 }
 
 pre,

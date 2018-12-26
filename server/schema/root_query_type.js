@@ -1,16 +1,16 @@
-const graphql = require('graphql');
+const graphql = require("graphql");
 const { GraphQLObjectType, GraphQLString } = graphql;
 
 const RootQuery = new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields: () => ({
+  name: "RootQueryType",
+  fields: () => ({
     version: {
-        type: GraphQLString,
-        resolve() {
-            return "1.0.0"
-        }
-        }
-    })
-})
+      type: GraphQLString,
+      resolve() {
+        return "1.0.0";
+      }
+    }
+  })
+});
 
 module.exports = RootQuery;
