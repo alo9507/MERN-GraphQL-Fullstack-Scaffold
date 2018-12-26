@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 
 import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 
 import { connect } from 'react-redux';
 import { increment } from '../redux/actions';
