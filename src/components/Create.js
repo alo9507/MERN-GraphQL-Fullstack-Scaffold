@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { Form } from 'semantic-ui-react';
+
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
 
 class CreateReview extends Component {
   onSubmit(formProps) {
@@ -17,51 +18,59 @@ class CreateReview extends Component {
     }
   }
 
-  renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+  renderInput = ({ input, label, meta, type }) => {
+    const className = `${meta.error && meta.touched ? 'error' : ''}`;
 
     return (
-      <div className={className}>
-        <label>{label}</label>
-        <input {...input} autoComplete='off' />
+      <Form.Field type={type} className={className} label={label} {...input}>
         {this.renderError(meta)}
-      </div>
+      </Form.Field>
     );
   };
 
   render() {
     const { handleSubmit } = this.props;
-
+    console.log(this.props);
     return (
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
           <Field
             name='title'
-            component={this.renderInput}
             label='Title'
             placeholder="Joe's Mom's Chicken Nuggets"
+            type='input'
+            component={this.renderInput}
           />
         </div>
         <div>
           <Field
+            label='Tagline'
             name='tagline'
-            component='input'
             placeholder='Something witty...'
+            type='input'
+            component={this.renderInput}
           />
         </div>
         <div>
           <Field
-            name='yearsActive'
-            component='input'
-            placeholder='Years Active'
+            name='mom'
+            label="Mom's Name"
+            placeholder="Mom's Name"
+            component={this.renderInput}
           />
         </div>
         <div>
-          <Field name='genre' component='input' placeholder='Genre' />
+          <Field
+            name='review'
+            label='Review'
+            component={this.renderInput}
+            placeholder={`How was your culinary experience at 's house?`}
+          />
         </div>
         <div className='has-error'>{this.props.errorMessage}</div>
-        <button className='btn'>Submit</button>
-      </form>
+        <Form.TextArea label='About' placeholder='Tell us more about you...' />
+        <Form.Button type='submit'>Submit</Form.Button>
+      </Form>
     );
   }
 }
@@ -80,7 +89,8 @@ const validate = formValues => {
 };
 
 const formWrapped = reduxForm({
-  form: 'createReview'
+  form: 'createReview',
+  validate
 })(CreateReview);
 
 export default formWrapped;

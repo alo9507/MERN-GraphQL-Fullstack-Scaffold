@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Button } from 'semantic-ui-react';
 
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
 import { connect } from 'react-redux';
 import { increment } from '../redux/actions';
+
+import fetchAuthors from '../graphql/queries/fetchAuthors';
 
 class Home extends Component {
   renderAuthors = () => {
@@ -18,15 +21,27 @@ class Home extends Component {
   };
 
   render() {
-    if (this.props.data.loading) {
+    const { data } = this.props;
+
+    if (data.loading) {
       return <div>Fetching songs...</div>;
+    }
+
+    if (data.error) {
+      return <h1>Error retrieving data! &mdash; {data.error}</h1>;
     }
 
     return (
       <div className='ui grid'>
         <div>
           <p>Redux</p>
-          <div>{this.props.count}</div>
+          <Button
+            content='Like'
+            icon='heart'
+            label={{ as: 'a', basic: true, content: this.props.count }}
+            labelPosition='right'
+            onClick={this.props.increment}
+          />
         </div>
 
         <div>
@@ -39,10 +54,6 @@ class Home extends Component {
           <div>
             {this.props.isSignedIn ? this.props.userId : `Not signed in`}
           </div>
-        </div>
-
-        <div>
-          <button onClick={this.props.increment}>Increment</button>
         </div>
       </div>
     );
@@ -62,12 +73,4 @@ const reduxified = connect(
   { increment }
 )(Home);
 
-const query = gql`
-  {
-    authors {
-      name
-    }
-  }
-`;
-
-export default graphql(query)(reduxified);
+export default graphql(fetchAuthors)(reduxified);

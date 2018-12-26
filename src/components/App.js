@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
+
 import { Router, Route, Switch } from 'react-router-dom';
 import Header from 'components/shared/Header';
 import history from '../routes/history';
 import Home from 'components/Home';
 import Create from 'components/Create';
 
-import '../style/style.css';
-
 class App extends Component {
   render() {
     return (
-      <div className='ui container'>
+      <Container>
         <Router history={history}>
           <div>
             <Header />
@@ -20,7 +20,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
-      </div>
+      </Container>
     );
   }
 }
