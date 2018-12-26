@@ -1,4 +1,4 @@
-import { INCREMENT } from "../actions/actions";
+import { INCREMENT } from '../actions/actions';
 
 const INITIAL_STATE = { count: 0 };
 
