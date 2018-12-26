@@ -1,0 +1,51 @@
+.standard-button {
+    @include build-button($class-name);
+    @include configure-solid-button($solid-color);
+
+    &-dafault {
+        @include configure-solid-button();
+    }
+
+    &-danger {
+        @include configure-solid-button($red-base);
+    }
+
+    &-warning {
+        @include configure-solid-button($orange-base);
+    }
+}
+
+.outline-button {
+    @include build-button($class-name);
+    @include configure-outline-button($solid-color);
+
+    &-dafault {
+        @include configure-outline-button();
+    }
+
+    &-danger {
+        @include configure-outline-button($red-base);
+    }
+
+    &-warning {
+        @include configure-outline-button($orange-base);
+    }
+}
+
+.button-with-icon {
+    text-align: center;
+    padding: 3em .12em;
+
+    i {
+        display: block;
+    }
+
+    &:hover > i {
+        color: $grey-base;
+    }
+
+    &:hover > span {
+        color: $grey-base;
+    }
+
+}

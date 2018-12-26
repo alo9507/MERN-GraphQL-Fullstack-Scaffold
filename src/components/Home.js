@@ -9,7 +9,7 @@ import { increment } from '../redux/actions';
 class Home extends Component {
 
     render() {
-        console.log(this.props);
+
         return (
           <div className="ui grid">
           

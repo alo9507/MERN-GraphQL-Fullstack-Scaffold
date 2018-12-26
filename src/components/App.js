@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import Header from 'components/shared/Header';
-import history from '../history';
+import history from '../routes/history';
 import Home from 'components/Home';
 import Create from 'components/Create';
 
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import '../style/scss/style.scss';
 
 class App extends Component {
     

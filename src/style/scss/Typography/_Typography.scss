@@ -1,0 +1,112 @@
+$base-font-size: 16px;
+$base-font-weight: 400;
+$base-line-height: 1.4;
+$base-right-left-spacing: 1em;
+$base-top-bottom-spacing: .5em;
+
+%margin {
+
+}
+
+%link {
+    color: $dark-green;
+    text-decoration: underline;
+    font-weight: 700;
+
+    &-no-decoration {
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: darken($dark-green, 7%);
+    }
+
+    &:hover,
+    &:visited:hover {
+        color: darken($dark-green, 5%);
+        cursor: pointer;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+}
+
+.form-group {
+    label {
+        color: $green-nex-base-medium !important;
+        font-size: 18px;
+    }
+
+    & .has-error {
+        input[type] {
+            border: 2px solid $error !important;
+
+            &:focus,
+            &:active {
+                border: none;
+                @include box-shadow(none);
+            }
+        }
+
+        select {
+            border: 2px solid $error !important;
+            color: black;
+        }
+
+        & .help-block {
+            color: $error;
+            display: inline-block;
+            font-size: 14px;
+        }
+    }
+    & .pasword-criteria {
+        color: $grey-lighten-40 !important;
+
+        & .password-criteria-satisfied {
+            color: $green;
+            font-weight: bold;
+        }
+    }
+}
+
+.acro-typography {
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    line-height: $base-line-height;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: $grey;
+    margin: 1.1em 0;
+}
+
+h1,
+h2 {
+    line-height: 1.1
+}
+
+label {
+    font-weight: 700;
+    font-size: 18px;
+    color: $dark-green;
+}
+
+pre,
+code {
+    font-family: 'Andale Mono', AndaleMono, monospace;
+    font-size: 15px;
+    line-height: 1.2;
+}
+

@@ -1,0 +1,12 @@
+@import "../../Utilities/ColorPalette/_ColorPalette";
+@import "../../Utilities/Variables/_Variables.scss";
+
+%placeholder {
+    margin: 3vh 0;
+    position: relative;
+    background: $off-white;
+    background-image: linear-gradient(to right, $off-white(0%) $off-white-darken2point5 30% $off-white-darken45% 70% $off-white 100%);
+    background-repeat: no-repeat;
+    @include animation($keyframes-backgorund-slider 2s ease-in-out infinite both);
+    @include transition(all 2s ease-in-out);
+}

@@ -1,0 +1,31 @@
+@mixin configure-all-heading-sizes($max-font-size) {
+    @for $heading from 1 through 6 {
+        h#{$heading} {
+            font-size: getHeadingFontSize($max-font-size, $heading);
+        }
+    }
+}
+
+@function getHeadingFontSize($maxFontSize, $heading) {
+    @if $heading == 1 {
+        @return $maxFontSize;
+    }
+    @else if $heading == 2 {
+        @return $maxFontSize * .7941;
+    }
+    @else if $heading == 3 {
+        @return $maxFontSize * .5882;
+    }
+    @else if $heading == 4 {
+        @return $maxFontSize * .4706;
+    }
+    @else if $heading == 5 {
+        @return $maxFontSize * .4118;
+    }
+    @else if $heading == 6 {
+        @return $maxFontSize * .3529;
+    }
+    @else {
+        @return $maxFontSize * .3529;
+    }
+}

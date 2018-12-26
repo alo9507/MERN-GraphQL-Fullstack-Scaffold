@@ -1,0 +1,20 @@
+@import "./Mixins/_ElevationMixins";
+
+.className {
+    
+    &-elevate-1 {
+        @include elevation-1;
+    }
+    &-elevate-2 {
+        @include elevation-2;
+    }
+    &-elevate-3 {
+        @include elevation-3;
+    }
+    &-elevate-4 {
+        @include elevation-4;
+    }
+    &-elevate-5 {
+        @include elevation-5;
+    }
+}

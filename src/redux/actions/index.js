@@ -3,7 +3,7 @@ import {
     SIGN_IN,
     SIGN_OUT
     } from './actions';
-import history from "../../history";
+import history from "../../routes/history";
 
 export const signIn = (userId) => {
     

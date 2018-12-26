@@ -1,0 +1,19 @@
+@import "../../Utilities/ColorPalette/_ColorPalette";
+
+$class-name: 'acro-pagination';
+
+.#{$class-name} {
+    input {
+        width: 50px;
+    }
+
+    button {
+        padding: .5em;
+    }
+
+    .page-number {
+        font-size: 20px;
+        font-weight: bold;
+        color: $grey-acro-base;
+    }
+}
