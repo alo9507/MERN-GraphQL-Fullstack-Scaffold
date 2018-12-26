@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Form, Message } from 'semantic-ui-react';
 
+import { Link } from 'react-router-dom';
+
 import { graphql } from 'react-apollo';
 import addAuthor from '../graphql/mutations/addAuthor';
+import fetchAuthors from '../graphql/queries/fetchAuthors';
 
 import { Field, reduxForm } from 'redux-form';
+
+import history from '../routes/history';
 
 class CreateReview extends Component {
   renderError({ error, touched }) {
@@ -30,29 +35,32 @@ class CreateReview extends Component {
   };
 
   onSubmit(formProps) {
-    console.log(formProps);
-
-    this.props.mutate({
-      variables: {
-        name: formProps.name
-      }
-    });
+    this.props
+      .mutate({
+        variables: { name: formProps.name },
+        refetchQueries: [{ query: fetchAuthors }]
+      })
+      .then(() => history.push('/'))
+      .catch(err => console.log(err));
   }
 
   render() {
     const { handleSubmit } = this.props;
 
     return (
-      <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <Field
-          name='name'
-          label='Name'
-          placeholder='Joe Smith'
-          type='input'
-          component={this.renderInput}
-        />
-        <Form.Button type='submit'>Submit</Form.Button>
-      </Form>
+      <React.Fragment>
+        <Link to='/'>Back</Link>
+        <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+          <Field
+            name='name'
+            label='Name'
+            placeholder='Joe Smith'
+            type='input'
+            component={this.renderInput}
+          />
+          <Form.Button type='submit'>Submit</Form.Button>
+        </Form>
+      </React.Fragment>
     );
   }
 }

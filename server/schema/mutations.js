@@ -19,6 +19,15 @@ const mutation = new GraphQLObjectType({
       resolve(parentValue, { name }) {
         return new Author({ name }).save();
       }
+    },
+    deleteAuthor: {
+      type: AuthorType,
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve(parentValue, { id }) {
+        return Author.findByIdAndDelete(id);
+      }
     }
   }
 });

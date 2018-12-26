@@ -1,24 +1,17 @@
 import React, { Component } from 'react';
 import { Button } from 'semantic-ui-react';
 
+import { Link } from 'react-router-dom';
+
 import { graphql } from 'react-apollo';
 
 import { connect } from 'react-redux';
 import { increment } from '../redux/actions';
 
 import fetchAuthors from '../graphql/queries/fetchAuthors';
+import List from '../components/List';
 
 class Home extends Component {
-  renderAuthors = () => {
-    return this.props.data.authors.map(author => {
-      return (
-        <li className='item' key={author.id}>
-          <div className='content'>{author.name}</div>
-        </li>
-      );
-    });
-  };
-
   render() {
     const { data } = this.props;
 
@@ -45,7 +38,7 @@ class Home extends Component {
 
         <div>
           <p>ApolloClient</p>
-          <div>{this.renderAuthors()}</div>
+          <List authors={data.authors} />
         </div>
 
         <div>
