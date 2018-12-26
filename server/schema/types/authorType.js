@@ -1,12 +1,12 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
 
-const MomType = new GraphQLObjectType({
-  name: 'MomType',
+const AuthorType = new GraphQLObjectType({
+  name: 'AuthorType',
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString }
   })
 });
 
-module.exports = MomType;
+module.exports = AuthorType;

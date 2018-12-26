@@ -3,21 +3,36 @@ const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLNonNull,
-  GraphQLInt
+  GraphQLInt,
+  GraphQLList
 } = graphql;
-const MomType = require('./types/momType');
+
+const Author = require('../models/author');
+const AuthorType = require('./types/authorType');
+
+const PostType = require('./types/postType');
+const Post = require('../models/post');
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: () => ({
-    mom: {
-      name: 'mom',
-      type: MomType,
-      arguments: { id: { type: new GraphQLNonNull(GraphQLInt) } }
+    // author: {
+    //   name: 'author',
+    //   type: AuthorType,
+    //   arguments: { id: { type: new GraphQLNonNull(GraphQLInt) } },
+    //   resolve(parentValue, { id }) {
+    //     return Author.findById(id);
+    //   }
+    // },
+    authors: {
+      type: new GraphQLList(AuthorType),
+      resolve(parentValue, args) {
+        return Author.find({});
+      }
     },
     version: {
       type: GraphQLString,
-      resolve() {
+      resolve(parentValue, args) {
         return '1.0.0';
       }
     }
