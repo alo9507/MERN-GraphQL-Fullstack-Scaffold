@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString, GraphQLInt } = graphql;
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLInt,
+  GraphQLNonNull
+} = graphql;
 
 const Author = require('../models/author');
 const AuthorType = require('./types/authorType');

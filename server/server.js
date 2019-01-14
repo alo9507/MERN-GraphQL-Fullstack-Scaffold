@@ -32,6 +32,8 @@ app.get('/hello', (req, res) => {
   res.send('Helloo');
 });
 
-app.listen(3001, () => {
-  console.log('listening on 3001');
+const PORT = 3001;
+
+app.listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
 });

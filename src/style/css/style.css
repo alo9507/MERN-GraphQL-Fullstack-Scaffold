@@ -5,8 +5,8 @@ with unique layout */
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 3px;
-  font-family: "Poiret One", cursive;
   font-size: 2em;
+  cursor: pointer;
 }
 
 .btn-green {
@@ -19,6 +19,9 @@ with unique layout */
 .btn-green:active {
   background: #176437;
 }
+.btn-green:focus {
+  outline: none;
+}
 
 .btn-blue {
   background: #3498db;
@@ -29,6 +32,9 @@ with unique layout */
 }
 .btn-blue:active {
   background: #16527a;
+}
+.btn-blue:focus {
+  outline: none;
 }
 
 .btn-yellow {
@@ -41,6 +47,9 @@ with unique layout */
 .btn-yellow:active {
   background: #796307;
 }
+.btn-yellow:focus {
+  outline: none;
+}
 
 .btn-red {
   background: #e74c3c;
@@ -51,6 +60,9 @@ with unique layout */
 }
 .btn-red:active {
   background: #921e12;
+}
+.btn-red:focus {
+  outline: none;
 }
 
 .input-regular {
@@ -138,7 +150,7 @@ with unique layout */
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h1,

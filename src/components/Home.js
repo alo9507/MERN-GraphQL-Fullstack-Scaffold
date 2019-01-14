@@ -35,7 +35,6 @@ class Home extends Component {
             onClick={this.props.increment}
           />
         </div>
-
         <div>
           <p>ApolloClient</p>
           <List authors={data.authors} />

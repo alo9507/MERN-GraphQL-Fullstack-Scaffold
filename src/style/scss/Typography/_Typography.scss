@@ -2,82 +2,80 @@ $base-font-size: 16px;
 $base-font-weight: 400;
 $base-line-height: 1.4;
 $base-right-left-spacing: 1em;
-$base-top-bottom-spacing: .5em;
+$base-top-bottom-spacing: 0.5em;
 
 %margin {
-
 }
 
 %link {
-    color: green;
+  color: green;
+  text-decoration: underline;
+  font-weight: 700;
+
+  &-no-decoration {
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: darken(green, 7%);
+  }
+
+  &:hover,
+  &:visited:hover {
+    color: darken(green, 5%);
+    cursor: pointer;
+  }
+
+  &:hover {
     text-decoration: underline;
-    font-weight: 700;
-
-    &-no-decoration {
-        text-decoration: none;
-    }
-
-    &:visited {
-        color: darken(green, 7%);
-    }
-
-    &:hover,
-    &:visited:hover {
-        color: darken(green, 5%);
-        cursor: pointer;
-    }
-
-    &:hover {
-        text-decoration: underline;
-    }
-
+  }
 }
 
 .form-group {
-    label {
-        color: green !important;
-        font-size: 18px;
+  label {
+    color: green !important;
+    font-size: 18px;
+  }
+
+  & .has-error {
+    input[type] {
+      border: 2px solid red !important;
+
+      &:focus,
+      &:active {
+        border: none;
+      }
     }
 
-    & .has-error {
-        input[type] {
-            border: 2px solid red !important;
-
-            &:focus,
-            &:active {
-                border: none;
-            }
-        }
-
-        select {
-            border: 2px solid red !important;
-            color: black;
-        }
-
-        & .help-block {
-            color: red;
-            display: inline-block;
-            font-size: 14px;
-        }
+    select {
+      border: 2px solid red !important;
+      color: black;
     }
-    & .pasword-criteria {
-        color: grey !important;
 
-        & .password-criteria-satisfied {
-            color: green;
-            font-weight: bold;
-        }
+    & .help-block {
+      color: red;
+      display: inline-block;
+      font-size: 14px;
     }
+  }
+  & .pasword-criteria {
+    color: grey !important;
+
+    & .password-criteria-satisfied {
+      color: green;
+      font-weight: bold;
+    }
+  }
 }
 
 .acro-typography {
-    font-size: $base-font-size;
-    font-weight: $base-font-weight;
-    line-height: $base-line-height;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 h1,
@@ -87,25 +85,24 @@ h4,
 h5,
 h6,
 p {
-    color: grey;
-    margin: 1.1em 0;
+  color: grey;
+  margin: 1.1em 0;
 }
 
 h1,
 h2 {
-    line-height: 1.1
+  line-height: 1.1;
 }
 
 label {
-    font-weight: 700;
-    font-size: 18px;
-    color: green;
+  font-weight: 700;
+  font-size: 18px;
+  color: green;
 }
 
 pre,
 code {
-    font-family: 'Andale Mono', AndaleMono, monospace;
-    font-size: 15px;
-    line-height: 1.2;
+  font-family: 'Andale Mono', AndaleMono, monospace;
+  font-size: 15px;
+  line-height: 1.2;
 }
-

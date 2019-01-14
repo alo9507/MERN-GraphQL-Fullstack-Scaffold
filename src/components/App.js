@@ -6,6 +6,8 @@ import Header from 'components/shared/Header';
 import history from '../routes/history';
 import Home from 'components/Home';
 import Create from 'components/Create';
+import '../../node_modules/css-reset-and-normalize/css/reset-and-normalize.min.css';
+import '../style/css/style.css';
 
 class App extends Component {
   render() {

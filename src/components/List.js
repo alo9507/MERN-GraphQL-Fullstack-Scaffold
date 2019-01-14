@@ -19,7 +19,7 @@ class List extends Component {
       return (
         <li className='item' key={id}>
           <div className='content'>{name}</div>
-          <Button onClick={this.deleteAuthor(id)}>Delete</Button>
+          <Button onClick={() => this.deleteAuthor(id)}>Delete</Button>
         </li>
       );
     });
