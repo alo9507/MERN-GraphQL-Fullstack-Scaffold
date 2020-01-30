@@ -4,14 +4,17 @@ const {
   GraphQLString,
   GraphQLID,
   GraphQLInt,
-  GraphQLNonNull
+  GraphQLNonNull,
+  GraphQLList
 } = graphql;
+const PostType = require('./postType')
 
 const AuthorType = new GraphQLObjectType({
   name: 'AuthorType',
   fields: () => ({
     id: { type: GraphQLID },
-    name: { type: new GraphQLNonNull(GraphQLString) }
+    name: { type: new GraphQLNonNull(GraphQLString) },
+    posts: { type: GraphQLList }
   })
 });
 
